@@ -60,6 +60,9 @@ body {
   gap: 0.5rem;
   color: var(--clr-gray);
 }
+.nav-item-mobile {
+  color: var(--clr-gray);
+}
 
 .nav-item__dropdown {
   position: absolute;
@@ -80,31 +83,40 @@ body {
   border-radius: 8px;
 }
 .nav-item-mobile:hover .nav-item__dropdown-mobile,
-.nav-item-mobile:focus .nav-item__dropdown-mobile {
+.nav-item-mobile:focus .nav-item__dropdown-mobile,
+.nav-item-mobile:active .nav-item__dropdown-mobile {
   display: grid;
   align-items: center;
 }
 .dropdown_item-mobile {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 0.5rem;
+  display: flex;
+  gap: 1rem;
   align-items: center;
 }
 .nav-item:hover,
 .nav-item-mobile:hover,
 .nav-item:focus,
 .nav-item-mobile:focus,
-button {
+.nav-item:active,
+.nav-item-mobile:active,
+.nav-item-mobile:hover .dropdown_item-mobile:hover {
   cursor: pointer;
-  color: var(--clr-black);
+  color: black;
 }
+.nav-item-mobile:hover .dropdown_item-mobile {
+  color: var(--clr-gray);
+}
+
 .nav-item:hover .arrow,
 .nav-item-mobile:hover .arrow,
 .nav-item:focus .arrow,
-.nav-item-mobile:focus .arrow {
+.nav-item-mobile:focus .arrow,
+.nav-item:active .arrow,
+.nav-item-mobile:active .arrow {
   content: url(./images/icon-arrow-down.svg);
 }
-.nav-item:hover .nav-item__dropdown {
+.nav-item:hover .nav-item__dropdown,
+.nav-item:active .nav-item__dropdown {
   opacity: 1;
   visibility: visible;
   cursor: pointer;
@@ -124,7 +136,8 @@ button {
   color: var(--clr-gray);
 }
 .btn-login:hover,
-.btn-login:focus {
+.btn-login:focus,
+.btn-login:active {
   color: var(--clr-black);
 }
 .btn-register {
@@ -133,7 +146,9 @@ button {
   border-radius: 12px;
   padding: 5px 10px;
 }
-.btn-register:hover {
+.btn-register:hover,
+.btn-register:focus,
+.btn-register:active {
   background-color: black;
   color: var(--clr-white);
 }
@@ -175,7 +190,9 @@ main {
   outline: none;
   border: none;
 }
-.main-content button:hover {
+.main-content button:hover,
+.main-content button:focus,
+.main-content button:active {
   background-color: transparent;
   color: var(--clr-black);
   outline: 2px solid black;
@@ -205,6 +222,9 @@ main {
   backdrop-filter: blur(5px);
   flex-direction: column;
   display: none;
+}
+.nav-item__dropdown-mobile img {
+  width: 24px;
 }
 .burger-icon {
   display: none;
